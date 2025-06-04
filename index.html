@@ -406,20 +406,75 @@
     </section>
 
 
-    <section id="video" class="video-section">
-      <h2>Veja o Produto em Ação</h2>
-      <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop></video>
-    </section>
+    <section id="midia" style="padding: 4rem 2rem; background: #0f172a;">
+        <h2 style="color: #38bdf8; text-align: center; margin-bottom: 2rem; font-size: 2.5rem;">Galeria do Projeto Alekson</h2>
+        <p style="color: #ccc; text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem;">Veja os bastidores, testes, integrações e o funcionamento do sistema em fotos reais da equipe.</p>
 
-    <section id="midia">
-        <h2>Galeria</h2>
-        <p>Confira imagens do projeto, montagem e testes com o sistema Opller integrado.</p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-            <img src="Imagens/Galeria1.jpeg" alt="Protótipo" style="max-width: 200px; border-radius: 10px;">
-            <img src="Imagens/Galeria2.jpeg" alt="Equipe" style="max-width: 200px; border-radius: 10px;">
-            <img src="Imagens/Galeria3.jpeg" alt="Sistema" style="max-width: 200px; border-radius: 10px;">
-            <img src="Imagens/Galeria4.jpeg" alt="Interface" style="max-width: 200px; border-radius: 10px;">
-            <img src="Imagens/Galeria5.png" alt="Interface" style="max-width: 200px; border-radius: 10px;">
+        <style>
+            .galeria-carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 12px;
+            }
+            .galeria-carousel-track {
+            display: flex;
+            animation: scrollCarousel 60s linear infinite;
+            gap: 1rem;
+            }
+            .galeria-carousel img {
+            height: 400px;
+            width: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.1);
+            flex-shrink: 0;
+            transition: transform 0.4s ease;
+            }
+            .galeria-carousel img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+            }
+            @keyframes scrollCarousel {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+            }
+        </style>
+
+        <div class="galeria-carousel">
+            <div class="galeria-carousel-track">
+            <img src="Imagens/Galeria1.jpeg" alt="Protótipo em montagem">
+            <img src="Imagens/Galeria2.jpeg" alt="Equipe desenvolvendo">
+            <img src="Imagens/Galeria3.jpeg" alt="Sistema em funcionamento">
+            <img src="Imagens/Galeria4.jpeg" alt="Interface do Opller">
+            <img src="Imagens/Galeria5.png" alt="Interface do Opller">
+            <img src="Imagens/Galeria6.jpeg" alt="Interface do Opller">
+            <img src="Imagens/Galeria7.jpeg" alt="Interface do Opller">
+            <img src="Imagens/Galeria8.jpeg" alt="Extra 1">
+            <img src="Imagens/Galeria9.jpeg" alt="Extra 2">
+            <img src="Imagens/Galeria10.jpeg" alt="Extra 3">
+            <img src="Imagens/Galeria11.jpeg" alt="Extra 4">
+            <img src="Imagens/Galeria12.jpeg" alt="Extra 5">
+            <img src="Imagens/Galeria13.jpeg" alt="Extra 6">
+            <img src="Imagens/Galeria14.jpeg" alt="Extra 7">
+            <!-- repete para efeito contínuo -->
+            <img src="Imagens/Galeria1.jpeg" alt="Protótipo em montagem">
+            <img src="Imagens/Galeria2.jpeg" alt="Equipe desenvolvendo">
+            <img src="Imagens/Galeria3.jpeg" alt="Sistema em funcionamento">
+            <img src="Imagens/Galeria4.jpeg" alt="Interface do Opller">
+            <img src="Imagens/Galeria5.png" alt="Interface do Opller">
+            <img src="Imagens/Galeria6.jpeg" alt="Interface do Opller">
+            <img src="Imagens/Galeria7.jpeg" alt="Interface do Opller">
+            <img src="Imagens/Galeria8.jpeg" alt="Extra 1">
+            <img src="Imagens/Galeria9.jpeg" alt="Extra 2">
+            <img src="Imagens/Galeria10.jpg" alt="Extra 3">
+            <img src="Imagens/Galeria11.jpeg" alt="Extra 4">
+            <img src="Imagens/Galeria12.jpeg" alt="Extra 5">
+            <img src="Imagens/Galeria13.jpeg" alt="Extra 6">
+            <img src="Imagens/Galeria14.jpeg" alt="Extra 7">
+            </div>
         </div>
     </section>
   </main>
