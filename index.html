@@ -1,154 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alekson - Soluções em Acesso e Horários</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="Imagens/LogoTipo.png" type="image/png">
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <header class="main-header">
-      <nav class="navbar">
-        <div class="navbar-brand">
-          <img src="Imagens/LogoTipoSenac.png" alt="Logo Senac" class="logo-senac">
-          <img src="Imagens/LogoTipo.png" alt="Logo Alekson" class="logo-alekson">
-        </div>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Serviços</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#media">Mídia</a></li>
-        </ul>
-        <div class="hamburger-menu">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-      </nav>
-    </header>
-
-    <div id="preloader">
-      <div class="logo-container">
-        <img src="Imagens/LogoTipo.png" alt="Logo do site" class="preloader-logo">
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alekson</title>
+  <link rel="icon" href="Imagens/LogoTipo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: "Quicksand", sans-serif;
+      background-color: #0f172a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .navbar {
+      background: linear-gradient(90deg, #0f172a, #1e293b);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+      color: #38bdf8;
+    }
+    .section {
+      padding: 4rem 2rem;
+      min-height: 100vh;
+    }
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease;
+    }
+    .logo img {
+      width: 120px;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+    .hidden {
+      display: none;
+    }
+    h1, h2, h3, h4 {
+      margin-bottom: 1rem;
+      color: #38bdf8;
+    }
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(45deg, #3b82f6, #06b6d4);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: transform 0.3s ease;
+    }
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
+    .galeria-imagens img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .galeria-imagens img:hover {
+      transform: scale(1.05);
+    }
+    .galeria-imagens {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <div class="logo">
+      <img src="Imagens/LogoTipo.png" alt="Logo do site">
     </div>
+  </div>
 
-    <section class="section home-section" id="home">
-      <div class="content-wrapper">
-        <div class="hero-text">
-          <h1>Otimize o registro de horários e o controle de acessos</h1>
-          <p class="subtitle">A solução perfeita para sua empresa, com tecnologia de ponta para gerenciar operações de maneira ágil e segura.</p>
-          <div class="cta-area">
-            <p>Inovação, eficiência e flexibilidade em um único clique.</p>
-            <a href="https://drive.google.com/file/d/1ZxHNQY-z4EdThffzn7bzCOaZCg9o4D3e/view?usp=sharing" class="btn primary-btn" target="_blank" rel="noopener noreferrer">Veja como funciona <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><img src="Imagens/LogoTipoSenac.png" class="side-image" style="height: 40px;"></li>
+        <li><img src="Imagens/LogoTipo.png" class="side-image2" style="height: 40px;"></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#midia">Mídia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="hidden">
+    <section id="home" class="section">
+      <h1>Bem-vindo ao Alekson</h1>
+      <p>Chegou a solução perfeita para otimizar o registro de horários e controle de acessos. Tecnologia de ponta para sua empresa.</p>
+      <a href="https://drive.google.com/file/d/1ZxHNQY-z4EdThffzn7bzCOaZCg9o4D3e/view?usp=sharing" class="cta-btn">Veja como funciona</a>
     </section>
 
-    <section class="section services-section" id="services">
-      <h2 class="section-title">Escolha o Plano Ideal</h2>
-      <div class="pricing-cards-container">
-        <div class="price-card">
-          <h5><i class="fas fa-leaf"></i> Starter</h5>
-          <p class="price">R$ 999<span>/mês</span></p>
-          <ul class="features-list">
-            <li><i class="fas fa-check-circle"></i> Reconhecimento Facial Básico</li>
-            <li><i class="fas fa-check-circle"></i> Cadastro de até 500 pessoas</li>
-            <li><i class="fas fa-check-circle"></i> Relatório simples de entrada e saída</li>
-            <li><i class="fas fa-check-circle"></i> Integração de Cadastro Manual</li>
-          </ul>
-          <button class="btn secondary-btn">Assinar</button>
-        </div>
-        <div class="price-card featured-card">
-          <div class="badge">Mais Popular</div>
-          <h5><i class="fas fa-star"></i> Pro</h5>
-          <p class="price">R$ 2.499<span>/mês</span></p>
-          <ul class="features-list">
-            <li><i class="fas fa-check-circle"></i> Reconhecimento facial básico</li>
-            <li><i class="fas fa-check-circle"></i> Cadastro de até 1500 pessoas</li>
-            <li><i class="fas fa-check-circle"></i> Relatórios detalhados</li>
-            <li><i class="fas fa-check-circle"></i> Integração com RH e segurança</li>
-            <li><i class="fas fa-check-circle"></i> Suporte Prioritário</li>
-          </ul>
-          <button class="btn primary-btn">Assinar</button>
-        </div>
-        <div class="price-card">
-          <h5><i class="fas fa-building"></i> Ultra</h5>
-          <p class="price">R$ 4.499<span>/mês</span></p>
-          <ul class="features-list">
-            <li><i class="fas fa-check-circle"></i> Reconhecimento facial, inteligência preditiva</li>
-            <li><i class="fas fa-check-circle"></i> Cadastro ilimitado</li>
-            <li><i class="fas fa-check-circle"></i> Relatórios detalhados (Horário, frequência, alertas)</li>
-            <li><i class="fas fa-check-circle"></i> Integração com RH e segurança</li>
-            <li><i class="fas fa-check-circle"></i> Suporte VIP 24hrs</li>
-            <li><i class="fas fa-check-circle"></i> Alerta em tempo real</li>
-          </ul>
-          <button class="btn secondary-btn">Assinar</button>
-        </div>
-      </div>
+    <section id="servicos" class="section">
+      <h2>Planos e Soluções</h2>
+      <p>Temos opções para todos os tipos de empresas. Confira nossos planos e escolha o que melhor atende suas necessidades.</p>
+      <!-- Adicione os cards aqui -->
     </section>
 
-    <section class="section about-section" id="about">
-      <h2 class="section-title">Quem Somos?</h2>
-      <p class="about-description">Somos alunos dos cursos de BEC e BEP, desenvolvendo um projeto inovador que integra o sistema Opller com uma catraca eletrônica. Nosso objetivo é oferecer uma solução de controle de acesso segura e prática, utilizando reconhecimento facial por inteligência artificial.</p>
-      <div class="team-cards-grid">
-        <div class="team-member-card alice">
-          <div class="member-info">
-            <h3>Alice Boschetti</h3>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/alice-boschetti-0663271b9/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-              <a href="https://github.com/AliViBos" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-        <div class="team-member-card edson">
-          <div class="member-info">
-            <h3>Edson Felipe</h3>
-            <div class="social-links">
-              <a href="https://www.instagram.com/edson.feelipe/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://www.linkedin.com/in/edson-felipe-guimar%C3%A3es-440b5b208/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            </div>
-          </div>
-        </div>
-        <div class="team-member-card julya">
-          <div class="member-info">
-            <h3>Julya Dias</h3>
-            <div class="social-links">
-              <a href="https://www.instagram.com/julyxdias/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://www.linkedin.com/in/julya-dias/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-              <a href="https://github.com/Julyxdias" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-        <div class="team-member-card karolaine">
-          <div class="member-info">
-            <h3>Karolaine Helena</h3>
-            <div class="social-links">
-              <a href="https://www.instagram.com/karolhelena.28131/?next=%2F6212/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://www.linkedin.com/in/karolaine-helena-bb62b6212/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-              <a href="https://github.com/Karolaine231" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section id="sobre" class="section">
+      <h2>Quem Somos?</h2>
+      <p>Somos estudantes desenvolvendo um sistema integrado com reconhecimento facial e catraca eletrônica para facilitar o controle de acessos.</p>
     </section>
 
-    <section class="section media-section" id="media">
-      <h2 class="section-title">Galeria do Projeto Alekson</h2>
-      <div class="gallery-grid">
-        <img src="Imagens/Galeria1.jpeg" alt="Protótipo em montagem">
-        <img src="Imagens/Galeria2.jpeg" alt="Equipe desenvolvendo">
-        <img src="Imagens/Galeria3.jpeg" alt="Sistema em funcionamento">
-        <img src="Imagens/Galeria4.jpeg" alt="Interface do Opller">
-        <img src="Imagens/Galeria5.png" alt="Interface do Opller">
-        <img src="Imagens/Galeria6.jpg" alt="Interface do Opller">
-        <img src="Imagens/Galeria7.jpg" alt="Interface do Opller">
+    <section id="midia" class="section">
+      <h2>Galeria</h2>
+      <div class="galeria-imagens">
+        <img src="Imagens/Galeria1.jpeg" alt="Protótipo">
+        <img src="Imagens/Galeria2.jpeg" alt="Equipe">
+        <img src="Imagens/Galeria3.jpeg" alt="Sistema">
+        <img src="Imagens/Galeria4.jpeg" alt="Interface">
       </div>
     </section>
+  </main>
 
-    <script src="index.js" defer></script>
-  </body>
+  <script>
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      const conteudo = document.getElementById("conteudo");
+
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+
+        setTimeout(() => {
+          preloader.style.display = 'none';
+          conteudo.classList.remove('hidden');
+        }, 500);
+      }, 1500);
+    });
+  </script>
+</body>
 </html>
