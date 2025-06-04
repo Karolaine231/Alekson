@@ -1,154 +1,358 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alekson - Soluções em Acesso e Horários</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="Imagens/LogoTipo.png" type="image/png">
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <header class="main-header">
-      <nav class="navbar">
-        <div class="navbar-brand">
-          <img src="Imagens/LogoTipoSenac.png" alt="Logo Senac" class="logo-senac">
-          <img src="Imagens/LogoTipo.png" alt="Logo Alekson" class="logo-alekson">
-        </div>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Serviços</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#media">Mídia</a></li>
-        </ul>
-        <div class="hamburger-menu">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-      </nav>
-    </header>
-
-    <div id="preloader">
-      <div class="logo-container">
-        <img src="Imagens/LogoTipo.png" alt="Logo do site" class="preloader-logo">
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alekson</title>
+  <link rel="icon" href="Imagens/LogoTipo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f172a;
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(10px);
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+      color: #facc15;
+    }
+    section {
+      padding: 6rem 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    h1, h2, h3 {
+      margin-bottom: 1rem;
+      color: #38bdf8;
+    }
+    p {
+      max-width: 800px;
+      margin-bottom: 2rem;
+    }
+    .cta-btn {
+      background: linear-gradient(45deg, #f59e0b, #facc15);
+      padding: 1rem 2rem;
+      color: #000;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .logo img {
+      width: 120px;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+    .hidden { display: none; }
+    .video-section video {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #38bdf8;
+    }
+    footer {
+      background: #1f2937;
+      color: #ccc;
+      padding: 2rem;
+      text-align: center;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .wave {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 150px;
+      background: url('https://svgshare.com/i/vg7.svg') repeat-x;
+      background-size: cover;
+      animation: waveAnim 10s linear infinite;
+      z-index: 0;
+    }
+    @keyframes waveAnim {
+      0% { background-position-x: 0; }
+      100% { background-position-x: 1600px; }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+<body>
+  <div id="preloader">
+    <div class="logo">
+      <img src="Imagens/LogoTipo2.png" alt="Logo do site">
     </div>
+  </div>
 
-    <section class="section home-section" id="home">
-      <div class="content-wrapper">
-        <div class="hero-text">
-          <h1>Otimize o registro de horários e o controle de acessos</h1>
-          <p class="subtitle">A solução perfeita para sua empresa, com tecnologia de ponta para gerenciar operações de maneira ágil e segura.</p>
-          <div class="cta-area">
-            <p>Inovação, eficiência e flexibilidade em um único clique.</p>
-            <a href="https://drive.google.com/file/d/1ZxHNQY-z4EdThffzn7bzCOaZCg9o4D3e/view?usp=sharing" class="btn primary-btn" target="_blank" rel="noopener noreferrer">Veja como funciona <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+  <div id="particles-js"></div>
+  <div class="wave"></div>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#video">Produto</a></li>
+      <li><a href="#midia">Mídia</a></li>
+    </ul>
+  </nav>
+
+  <main id="conteudo" class="hidden">
+    <section id="home">
+      <h1>Bem-vindo ao Alekson</h1>
+      <p>Uma solução moderna e inteligente para registro de horários e controle de acessos com tecnologia de ponta.</p>
+      <a href="https://drive.google.com/file/d/1ZxHNQY-z4EdThffzn7bzCOaZCg9o4D3e/view?usp=sharing" class="cta-btn">Veja como funciona</a>
     </section>
 
-    <section class="section services-section" id="services">
-      <h2 class="section-title">Escolha o Plano Ideal</h2>
-      <div class="pricing-cards-container">
-        <div class="price-card">
-          <h5><i class="fas fa-leaf"></i> Starter</h5>
-          <p class="price">R$ 999<span>/mês</span></p>
-          <ul class="features-list">
-            <li><i class="fas fa-check-circle"></i> Reconhecimento Facial Básico</li>
-            <li><i class="fas fa-check-circle"></i> Cadastro de até 500 pessoas</li>
-            <li><i class="fas fa-check-circle"></i> Relatório simples de entrada e saída</li>
-            <li><i class="fas fa-check-circle"></i> Integração de Cadastro Manual</li>
-          </ul>
-          <button class="btn secondary-btn">Assinar</button>
+    <section id="servicos">
+        <h2>Planos e Soluções</h2>
+        <p>Escolha o plano ideal para sua empresa. Segurança, praticidade e tecnologia em um só lugar.</p>
+        <div class="pricing-cards" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+            <!-- Starter -->
+            <div class="card" style="background: #1e293b; border-radius: 12px; padding: 1.5rem; width: 300px; box-shadow: 0 0 15px rgba(255,255,255,0.1);">
+            <h3><i class="fas fa-leaf"></i> Starter</h3>
+            <p class="price">R$ 999<span>/mês</span></p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><i class="fas fa-user"></i> Reconhecimento Facial Básico</li>
+                <li><i class="fas fa-users"></i> Cadastro de até 500 pessoas</li>
+                <li><i class="fas fa-database"></i> Relatório simples de entrada e saída</li>
+                <li><i class="fas fa-cloud-upload-alt"></i> Integração de Cadastro Manual</li>
+            </ul>
+            <a href="#" class="cta-btn" style="margin-top: 1rem; display: inline-block;">Assinar</a>
+            </div>
+            <!-- Pro -->
+            <div class="card featured" style="background: linear-gradient(135deg, #5b5a5a, #66626d); border-radius: 12px; padding: 1.5rem; width: 300px; box-shadow: 0 0 15px rgba(255,255,255,0.2);">
+            <div class="badge" style="background: #0f172a; color: white; padding: 0.2rem 0.5rem; font-size: 0.8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem;">Mais Popular</div>
+            <h3><i class="fas fa-star"></i> Pro</h3>
+            <p class="price">R$ 2.499<span>/mês</span></p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><i class="fas fa-user"></i> Reconhecimento Facial Básico</li>
+                <li><i class="fas fa-users"></i> Cadastro de até 1500 pessoas</li>
+                <li><i class="fas fa-database"></i> Relatórios detalhados</li>
+                <li><i class="fas fa-cloud-upload-alt"></i> Integração com RH e segurança</li>
+            </ul>
+            <a href="#" class="cta-btn" style="margin-top: 1rem; display: inline-block; background: #0f172a; color: white;">Assinar</a>
+            </div>
+            <!-- Ultra -->
+            <div class="card" style="background: #1e293b; border-radius: 12px; padding: 1.5rem; width: 300px; box-shadow: 0 0 15px rgba(255,255,255,0.1);">
+            <h3><i class="fas fa-building"></i> Ultra</h3>
+            <p class="price">R$ 4.499<span>/mês</span></p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><i class="fas fa-user"></i> Reconhecimento facial com inteligência preditiva</li>
+                <li><i class="fas fa-users"></i> Cadastro ilimitado</li>
+                <li><i class="fas fa-database"></i> Relatórios detalhados (Horário, frequência, alertas)</li>
+                <li><i class="fas fa-cloud-upload-alt"></i> Integração com RH e segurança</li>
+                <li><i class="fas fa-phone"></i> Suporte VIP 24hrs</li>
+                <li><i class="fas fa-user-secret"></i> Alerta em tempo real</li>
+            </ul>
+            <a href="#" class="cta-btn" style="margin-top: 1rem; display: inline-block;">Assinar</a>
+            </div>
         </div>
-        <div class="price-card featured-card">
-          <div class="badge">Mais Popular</div>
-          <h5><i class="fas fa-star"></i> Pro</h5>
-          <p class="price">R$ 2.499<span>/mês</span></p>
-          <ul class="features-list">
-            <li><i class="fas fa-check-circle"></i> Reconhecimento facial básico</li>
-            <li><i class="fas fa-check-circle"></i> Cadastro de até 1500 pessoas</li>
-            <li><i class="fas fa-check-circle"></i> Relatórios detalhados</li>
-            <li><i class="fas fa-check-circle"></i> Integração com RH e segurança</li>
-            <li><i class="fas fa-check-circle"></i> Suporte Prioritário</li>
-          </ul>
-          <button class="btn primary-btn">Assinar</button>
-        </div>
-        <div class="price-card">
-          <h5><i class="fas fa-building"></i> Ultra</h5>
-          <p class="price">R$ 4.499<span>/mês</span></p>
-          <ul class="features-list">
-            <li><i class="fas fa-check-circle"></i> Reconhecimento facial, inteligência preditiva</li>
-            <li><i class="fas fa-check-circle"></i> Cadastro ilimitado</li>
-            <li><i class="fas fa-check-circle"></i> Relatórios detalhados (Horário, frequência, alertas)</li>
-            <li><i class="fas fa-check-circle"></i> Integração com RH e segurança</li>
-            <li><i class="fas fa-check-circle"></i> Suporte VIP 24hrs</li>
-            <li><i class="fas fa-check-circle"></i> Alerta em tempo real</li>
-          </ul>
-          <button class="btn secondary-btn">Assinar</button>
-        </div>
-      </div>
     </section>
 
-    <section class="section about-section" id="about">
-      <h2 class="section-title">Quem Somos?</h2>
-      <p class="about-description">Somos alunos dos cursos de BEC e BEP, desenvolvendo um projeto inovador que integra o sistema Opller com uma catraca eletrônica. Nosso objetivo é oferecer uma solução de controle de acesso segura e prática, utilizando reconhecimento facial por inteligência artificial.</p>
-      <div class="team-cards-grid">
-        <div class="team-member-card alice">
-          <div class="member-info">
+    <!-- Seção Quem Somos com imagens e expansão -->
+    <section id="sobre" style="background: #0f172a; padding: 4rem 2rem; text-align: center; position: relative; z-index: 1;">
+        <h2 style="color: #38bdf8; margin-bottom: 2rem; font-size: 2.5rem;">Quem Somos</h2>
+        <p style="max-width: 800px; margin: 0 auto 3rem; color: #ccc; font-size: 1.1rem;">Somos alunos dos cursos de BEC e BEP, desenvolvendo um projeto com integração entre o sistema Opller e uma catraca eletrônica com reconhecimento facial por inteligência artificial.</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+
+            <style>
+            .card-pessoa {
+                background: linear-gradient(145deg, #1f2e45, #0f172a);
+                border-radius: 16px;
+                width: 260px;
+                padding: 1.5rem;
+                box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            .card-pessoa:hover {
+                transform: scale(1.07);
+                box-shadow: 0 0 35px #38bdf8;
+            }
+            .card-pessoa img {
+                width: 100%;
+                border-radius: 12px;
+                transition: transform 0.4s ease;
+            }
+            .card-pessoa:hover img {
+                transform: scale(1.1);
+            }
+            .card-pessoa h3 {
+                color: #fff;
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+                font-size: 1.3rem;
+            }
+            .card-pessoa p a {
+                color: #facc15;
+                font-size: 0.9rem;
+                text-decoration: none;
+            }
+            .card-pessoa p a:hover {
+                text-decoration: underline;
+            }
+            .hover-frase {
+                opacity: 0;
+                margin-top: 0.5rem;
+                font-size: 0.85rem;
+                color: #ccc;
+                transition: opacity 0.4s ease;
+            }
+            .card-pessoa:hover .hover-frase {
+                opacity: 1;
+            }
+            </style>
+
+            <!-- ALICE -->
+            <div class="card-pessoa">
+            <img src="Imagens/alice.png" alt="Alice Boschetti">
             <h3>Alice Boschetti</h3>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/alice-boschetti-0663271b9/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-              <a href="https://github.com/AliViBos" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <p><a href="https://www.linkedin.com/in/alice-boschetti-0663271b9/" target="_blank">LinkedIn</a> | <a href="https://github.com/AliViBos" target="_blank">GitHub</a></p>
+            <div class="hover-frase">Transformando ideias em soluções incríveis!</div>
             </div>
-          </div>
-        </div>
-        <div class="team-member-card edson">
-          <div class="member-info">
+
+            <!-- EDSON -->
+            <div class="card-pessoa">
+            <img src="Imagens/edson.jpg" alt="Edson Felipe">
             <h3>Edson Felipe</h3>
-            <div class="social-links">
-              <a href="https://www.instagram.com/edson.feelipe/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://www.linkedin.com/in/edson-felipe-guimar%C3%A3es-440b5b208/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <p><a href="https://www.instagram.com/edson.feelipe/" target="_blank">Instagram</a> | <a href="https://www.linkedin.com/in/edson-felipe-guimar%C3%A3es-440b5b208/" target="_blank">LinkedIn</a></p>
+            <div class="hover-frase">Focado em tecnologia com propósito!</div>
             </div>
-          </div>
-        </div>
-        <div class="team-member-card julya">
-          <div class="member-info">
+
+            <!-- JULYA -->
+            <div class="card-pessoa">
+            <img src="Imagens/julya.jpg" alt="Julya Dias">
             <h3>Julya Dias</h3>
-            <div class="social-links">
-              <a href="https://www.instagram.com/julyxdias/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://www.linkedin.com/in/julya-dias/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-              <a href="https://github.com/Julyxdias" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <p><a href="https://www.instagram.com/julyxdias/" target="_blank">Instagram</a> | <a href="https://www.linkedin.com/in/julya-dias/" target="_blank">LinkedIn</a> | <a href="https://github.com/Julyxdias" target="_blank">GitHub</a></p>
+            <div class="hover-frase">Criatividade e inovação em cada linha de código!</div>
             </div>
-          </div>
-        </div>
-        <div class="team-member-card karolaine">
-          <div class="member-info">
+
+            <!-- KAROLAINE -->
+            <div class="card-pessoa">
+            <img src="Imagens/karolaine.jpeg" alt="Karolaine Helena">
             <h3>Karolaine Helena</h3>
-            <div class="social-links">
-              <a href="https://www.instagram.com/karolhelena.28131/?next=%2F6212/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://www.linkedin.com/in/karolaine-helena-bb62b6212/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-              <a href="https://github.com/Karolaine231" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <p><a href="https://www.instagram.com/karolhelena.28131/?next=%2F6212/" target="_blank">Instagram</a> | <a href="https://www.linkedin.com/in/karolaine-helena-bb62b6212/" target="_blank">LinkedIn</a> | <a href="https://github.com/Karolaine231" target="_blank">GitHub</a></p>
+            <div class="hover-frase">Tecnologia com alma e impacto social!</div>
             </div>
-          </div>
+
         </div>
-      </div>
     </section>
 
-    <section class="section media-section" id="media">
-      <h2 class="section-title">Galeria do Projeto Alekson</h2>
-      <div class="gallery-grid">
-        <img src="Imagens/Galeria1.jpeg" alt="Protótipo em montagem">
-        <img src="Imagens/Galeria2.jpeg" alt="Equipe desenvolvendo">
-        <img src="Imagens/Galeria3.jpeg" alt="Sistema em funcionamento">
-        <img src="Imagens/Galeria4.jpeg" alt="Interface do Opller">
-        <img src="Imagens/Galeria5.png" alt="Interface do Opller">
-        <img src="Imagens/Galeria6.jpg" alt="Interface do Opller">
-        <img src="Imagens/Galeria7.jpg" alt="Interface do Opller">
-      </div>
+
+    <section id="video" class="video-section">
+      <h2>Veja o Produto em Ação</h2>
+      <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop></video>
     </section>
 
-    <script src="index.js" defer></script>
-  </body>
+    <section id="midia">
+        <h2>Galeria</h2>
+        <p>Confira imagens do projeto, montagem e testes com o sistema Opller integrado.</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+            <img src="Imagens/Galeria1.jpeg" alt="Protótipo" style="max-width: 200px; border-radius: 10px;">
+            <img src="Imagens/Galeria2.jpeg" alt="Equipe" style="max-width: 200px; border-radius: 10px;">
+            <img src="Imagens/Galeria3.jpeg" alt="Sistema" style="max-width: 200px; border-radius: 10px;">
+            <img src="Imagens/Galeria4.jpeg" alt="Interface" style="max-width: 200px; border-radius: 10px;">
+            <img src="Imagens/Galeria5.png" alt="Interface" style="max-width: 200px; border-radius: 10px;">
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Alekson. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      const conteudo = document.getElementById("conteudo");
+
+      setTimeout(() => {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+          preloader.style.display = 'none';
+          conteudo.classList.remove('hidden');
+        }, 500);
+      }, 1500);
+    });
+
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.2, width: 1 },
+        move: { enable: true, speed: 2, direction: "none", random: false, straight: false, bounce: false }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+        modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
 </html>
