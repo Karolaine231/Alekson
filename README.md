@@ -1,50 +1,59 @@
-readme_content = """
-# 🛂 Alekson - Sistema de Catraca com Reconhecimento Facial
+# Alekson - Sistema de Controle de Acesso com Reconhecimento Facial
 
-O **Alekson** é um sistema de controle de acesso inteligente que utiliza **reconhecimento facial por inteligência artificial** para automatizar e tornar mais seguro o registro de entrada e saída de pessoas. Desenvolvido por estudantes dos cursos de BEC e BEP, o projeto integra hardware (catraca eletrônica) e software (interface web e banco de dados) para oferecer **eficiência, segurança e inovação** no controle de acessos.
+Este repositório contém o código-fonte do site institucional do projeto **Alekson**, uma solução moderna e inteligente para o controle de acessos por meio de reconhecimento facial, voltado para empresas que buscam praticidade, segurança e integração com sistemas de RH.
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-- ✅ Reconhecimento facial em tempo real
-- ✅ Cadastro individual com banco de dados integrado
-- ✅ Geração de relatórios de acesso e frequência
-- ✅ Suporte a diferentes níveis de plano: Starter, Pro e Ultra
-- ✅ Integração com sistemas de RH e segurança
-- ✅ Interface moderna e responsiva
-- ✅ Alertas em tempo real (Plano Ultra)
+- Interface responsiva com layout moderno e tecnológico
+- Efeito de digitação no título inicial
+- Preloader animado com logo
+- Animações de partículas e ondas no fundo
+- Galeria automática com carrossel contínuo
+- Cards de equipe com expansão e frase ao passar o mouse
+- Planos de serviço com destaque visual
+- Seção de vídeo com apresentação do produto
 
-## 💡 Público-Alvo
+## Tecnologias Utilizadas
 
-Empresas, instituições de ensino, academias, condomínios e qualquer ambiente que precise de um sistema de controle de acesso seguro e automatizado.
+- HTML5 / CSS3
+- JavaScript puro
+- Font Awesome
+- Google Fonts (Poppins)
+- Particles.js
+- Animações CSS personalizadas
 
-## 🧠 Tecnologias Utilizadas
+## Estrutura do Projeto
 
-- **Frontend**: HTML, CSS, JavaScript (FullPage.js, FontAwesome)
-- **Backend**: 
-- **Reconhecimento Facial**:
-- **Banco de Dados**: 
-- **Hardware**: 
+```
+📁 Imagens/
+├── LogoTipo.png
+├── LogoTipo2.png
+├── Raposa.jpg
+├── Galeria1.jpeg ... Galeria20.jpg
+├── Alice.png
+├── Edson.jpg
+├── Julya.jpg
+└── Karolaine.jpeg
 
-## 🌐 Site
+📄 index.html
+```
 
-Acesse o site para conhecer melhor:  
-👉 [Alekson](https://alekson.vercel.app/)
+## Como executar
 
-## 📸 Galeria
+1. Clone este repositório:
+   git clone https://github.com/seu-usuario/alekson-site.git
 
-Confira fotos do desenvolvimento e protótipo na seção de mídia do site.
+2. Abra o arquivo `index.html` em qualquer navegador moderno.
 
-## 👨‍💻 Equipe Desenvolvedora
+Não é necessário nenhum servidor ou instalação adicional. Todo o conteúdo é executado no navegador.
 
-- **Alice Boschetti** – [LinkedIn](https://www.linkedin.com/in/alice-boschetti-0663271b9/) | [GitHub](https://github.com/AliViBos)
-- **Edson Felipe** – [LinkedIn](https://www.linkedin.com/in/edson-felipe-guimar%C3%A3es-440b5b208/) | [Instagram](https://www.instagram.com/edson.feelipe/)
-- **Julya Dias** – [LinkedIn](https://www.linkedin.com/in/julya-dias/) | [GitHub](https://github.com/Julyxdias) | [Instagram](https://www.instagram.com/julyxdias/)
-- **Karolaine Helena** – [LinkedIn](https://www.linkedin.com/in/karolaine-helena-bb62b6212/) | [GitHub](https://github.com/Karolaine231) | [Instagram](https://www.instagram.com/karolhelena.28131/)
+## Autores
 
-## 📬 Contato
+- Alice Boschetti
+- Edson Felipe
+- Julya Dias
+- Karolaine Helena
 
-Caso tenha interesse em conhecer mais sobre o projeto ou adquirir a solução, entre em contato com um dos integrantes via LinkedIn ou redes sociais.
-"""
+## Licença
 
-with open("README.md", "w", encoding="utf-8") as f:
-    f.write(readme_content)
+Projeto acadêmico e de uso educacional. Todos os direitos reservados à equipe Alekson - 2025.
