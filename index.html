@@ -157,10 +157,116 @@
   </nav>
 
   <main id="conteudo" class="hidden">
-    <section id="home">
-      <h1>Bem-vindo ao Alekson</h1>
-      <p>Uma solução moderna e inteligente para registro de horários e controle de acessos com tecnologia de ponta.</p>
-      <a href="https://drive.google.com/file/d/1ZxHNQY-z4EdThffzn7bzCOaZCg9o4D3e/view?usp=sharing" class="cta-btn">Veja como funciona</a>
+    <section id="home" style="min-height: 100vh; background: radial-gradient(circle at center, #0f172a, #000); display: flex; flex-direction: row; justify-content: space-around; align-items: center; text-align: left; padding: 4rem 2rem; position: relative; z-index: 1; flex-wrap: wrap; overflow: hidden;">
+
+        <style>
+        .cta-btn {
+            background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 2rem;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            display: inline-block;
+            animation: pulseBtn 2s infinite;
+        }
+        @keyframes pulseBtn {
+            0% { box-shadow: 0 0 10px rgba(56, 189, 248, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(56, 189, 248, 0.7); }
+            100% { box-shadow: 0 0 10px rgba(56, 189, 248, 0.3); }
+        }
+        .home-text {
+            max-width: 500px;
+            z-index: 2;
+            animation: fadeInUp 1s ease forwards;
+        }
+        .home-text h1 {
+            color: #38bdf8;
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #38bdf8;
+            width: 23ch;
+            animation: typing 3.5s steps(23, end) forwards;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 18ch; }
+        }
+        .home-text p {
+            color: #ccc;
+            font-size: 1.25rem;
+            margin-top: 1rem;
+        }
+        .home-fox {
+            max-width: 580px;
+            width: 100%;
+            border-radius: 24px;
+            filter: drop-shadow(0 0 25px #38bdf8);
+            transform: scale(1);
+            transition: transform 0.5s ease, filter 0.5s ease;
+            z-index: 2;
+        }
+        .home-fox:hover {
+            transform: scale(1.15) rotate(2deg);
+            filter: drop-shadow(0 0 45px #38bdf8);
+        }
+        .circulo-animado {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(56,189,248,0.1), transparent 70%);
+            animation: girar 20s linear infinite;
+            top: -100px;
+            right: -150px;
+            z-index: 0;
+        }
+        @keyframes girar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes fadeInUp {
+            0% { transform: translateY(40px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsivo para mobile */
+        @media (max-width: 768px) {
+            #home {
+            flex-direction: column;
+            text-align: center;
+            }
+            .home-text h1 {
+            font-size: 2.2rem;
+            white-space: normal;
+            border-right: none;
+            animation: none;
+            width: auto;
+            }
+            .home-fox {
+            max-width: 320px;
+            margin-top: 2rem;
+            }
+        }
+        </style>
+
+        <div class="home-text">
+        <h1>Bem-vindo ao Alekson</h1>
+        <p>Uma solução moderna e inteligente para registro de horários e controle de acessos com tecnologia de ponta.</p>
+        <a href="https://drive.google.com/file/d/1ZxHNQY-z4EdThffzn7bzCOaZCg9o4D3e/view?usp=sharing" class="cta-btn">Veja como funciona</a>
+        </div>
+
+        <div>
+        <img src="Imagens/Raposa.jpg" alt="Raposa tecnológica" class="home-fox">
+        </div>
+
+        <div class="circulo-animado"></div>
     </section>
 
     <section id="servicos">
@@ -266,7 +372,7 @@
 
             <!-- ALICE -->
             <div class="card-pessoa">
-            <img src="Imagens/Alice.png" alt="Alice Boschetti">
+            <img src="Imagens/alice.png" alt="Alice Boschetti">
             <h3>Alice Boschetti</h3>
             <p><a href="https://www.linkedin.com/in/alice-boschetti-0663271b9/" target="_blank">LinkedIn</a> | <a href="https://github.com/AliViBos" target="_blank">GitHub</a></p>
             <div class="hover-frase">Transformando ideias em soluções incríveis!</div>
@@ -274,7 +380,7 @@
 
             <!-- EDSON -->
             <div class="card-pessoa">
-            <img src="Imagens/Edson.jpg" alt="Edson Felipe">
+            <img src="Imagens/edson.jpg" alt="Edson Felipe">
             <h3>Edson Felipe</h3>
             <p><a href="https://www.instagram.com/edson.feelipe/" target="_blank">Instagram</a> | <a href="https://www.linkedin.com/in/edson-felipe-guimar%C3%A3es-440b5b208/" target="_blank">LinkedIn</a></p>
             <div class="hover-frase">Focado em tecnologia com propósito!</div>
@@ -282,7 +388,7 @@
 
             <!-- JULYA -->
             <div class="card-pessoa">
-            <img src="Imagens/Julya.jpg" alt="Julya Dias">
+            <img src="Imagens/julya.jpg" alt="Julya Dias">
             <h3>Julya Dias</h3>
             <p><a href="https://www.instagram.com/julyxdias/" target="_blank">Instagram</a> | <a href="https://www.linkedin.com/in/julya-dias/" target="_blank">LinkedIn</a> | <a href="https://github.com/Julyxdias" target="_blank">GitHub</a></p>
             <div class="hover-frase">Criatividade e inovação em cada linha de código!</div>
@@ -290,7 +396,7 @@
 
             <!-- KAROLAINE -->
             <div class="card-pessoa">
-            <img src="Imagens/Karolaine.jpeg" alt="Karolaine Helena">
+            <img src="Imagens/karolaine.jpeg" alt="Karolaine Helena">
             <h3>Karolaine Helena</h3>
             <p><a href="https://www.instagram.com/karolhelena.28131/?next=%2F6212/" target="_blank">Instagram</a> | <a href="https://www.linkedin.com/in/karolaine-helena-bb62b6212/" target="_blank">LinkedIn</a> | <a href="https://github.com/Karolaine231" target="_blank">GitHub</a></p>
             <div class="hover-frase">Tecnologia com alma e impacto social!</div>
